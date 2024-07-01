@@ -1,0 +1,15 @@
+li {
+    list-style: none;
+}
+
+.prio1 {
+    color: red;
+}
+
+.prio2 {
+    color: green;
+}
+
+.prio3 {
+    color: blue;
+}
