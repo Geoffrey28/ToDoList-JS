@@ -8,12 +8,13 @@
     <script src="assets/scripts/main.js" defer></script>
 </head>
 <body>
+
     <section>
         <h1>Liste des taches</h1>
-        <ul class="tasksList">
-
-        </ul>
+        <p class="notif"></p>
+        <ul class="tasksList"></ul>
     </section>
+
     <section>
         <form class="tasksForm" action="">
             <input type="text" name="taskname" id="taskname" placeholder="nom de la tâche">
@@ -22,7 +23,10 @@
                 <option value="2">Normale</option>
                 <option value="3">Basse</option>
             </select>
+            <button>Ajouter la tâche</button>
         </form>
+        <button class="deleteTasks">Supprimer toutes les tâches</button>
     </section>
+
 </body>
 </html>
