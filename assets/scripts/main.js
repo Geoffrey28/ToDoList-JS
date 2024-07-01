@@ -80,4 +80,8 @@ function sortTasks() {
 
 function showNotification(nbrDeletion) {
     notif.textContent = nbrDeletion + ' tâches supprimées avec succès';
+    notif.style.opacity = 1;
+    setTimeout(() => {
+        notif.style.opacity = 0;
+    }, 1500);
 }
