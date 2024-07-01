@@ -64,11 +64,11 @@ function showTasks(tasks) {
 
 function deleteTasks() {
     let nbrDeletion = 0;
-    for (let i = 0; i < tasks.length; i++) {
+    let removeIndex;
+    for (let i = tasks.length - 1; i >= 0; i--) {
         if (tasksList.childNodes[i].querySelector('input').checked) {
             tasks.splice(i, 1);
             nbrDeletion++;
-            
         }
     }
     showNotification(nbrDeletion);
