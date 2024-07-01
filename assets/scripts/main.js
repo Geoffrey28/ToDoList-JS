@@ -39,16 +39,7 @@ form.addEventListener('submit', (e) => {
 });
 
 deleteBtn.addEventListener('click', () => {
-    let nbrDeletion = 0;
-    for (let i = 0; i < tasks.length; i++) {
-        if (tasksList.childNodes[i].querySelector('input').checked) {
-            console.log(tasks[i]);
-            tasks.splice(i, 1);
-            console.log(tasks[i]);
-            nbrDeletion++;
-        }
-    }
-    showNotification(nbrDeletion);
+    deleteTasks();
     showTasks(tasks);
 });
 
@@ -59,14 +50,27 @@ function showTasks(tasks) {
     tasksList.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
         let newTask = document.createElement('li');
+        newTask.classList.add('list-group-item');
         let label = document.createElement('label');
-        label.classList.add('prio' + tasks[i].priority);
+        label.classList.add('prio' + tasks[i].priority, 'form-check');
         let input = document.createElement('input');
         input.type = 'checkbox';
+        input.classList.add('form-check-input');
         label.append(input, tasks[i].title);
         newTask.appendChild(label);
         tasksList.appendChild(newTask);
     }
+}
+
+function deleteTasks() {
+    let nbrDeletion = 0;
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasksList.childNodes[i].querySelector('input').checked) {
+            tasks.splice(i, 1);
+            nbrDeletion++;
+        }
+    }
+    showNotification(nbrDeletion);
 }
 
 function sortTasks() {
