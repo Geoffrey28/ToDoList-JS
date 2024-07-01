@@ -68,6 +68,7 @@ function deleteTasks() {
         if (tasksList.childNodes[i].querySelector('input').checked) {
             tasks.splice(i, 1);
             nbrDeletion++;
+            
         }
     }
     showNotification(nbrDeletion);
